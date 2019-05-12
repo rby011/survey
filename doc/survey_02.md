@@ -6,6 +6,14 @@
 
 * https://github.com/tingsu/Stoat
 
+* https://www.youtube.com/watch?v=Y1bTgqRwtbQ
+
+  ![image_9](../resources/img/image_9.png)
+
+  ![image_10](../resources/img/image_10.png)
+
+* https://sites.google.com/site/stoat2017/demo
+
 ## KeyWord
 
 * Stochastic Behavior Model, GUI Testing
@@ -20,7 +28,7 @@
 
 * 또한 시스템 이벤트를 단계-2 에서 상태와 무관하게 주입해주는 것도 Crash(#) 와 Code Coverage 개선에 큰 역할.
 
-* SOTA 였던 Facebook Sapienz 을 Crash Uniqueness 와 Code Coverage 기준으로 추월했다는 점에서 눈여겨 볼 만함
+* SOTA 였던 [Facebook Sapienz](../resources/p_issta16_sapienz.pdf) 을 Crash Uniqueness 와 Code Coverage 기준으로 추월했다는 점에서 눈여겨 볼 만함
 
   * 이들 GUI 테스트 자동화 영역은 Unique Crash (#), Coverage 기준을 가지고 대결 中
 
