@@ -4,6 +4,8 @@
 
 * [fse17-stoat-full-paper.pdf](../resources/fse17-stoat-full-paper.pdf)
 
+* https://github.com/tingsu/Stoat
+
 ## KeyWord
 
 * Stochastic Behavior Model, GUI Testing
