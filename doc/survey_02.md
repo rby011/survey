@@ -26,11 +26,13 @@
 
 * 단계-1 에서는 정적 분석을 통해 어플리케이션 별로 의미있는 사용자 이벤트 집합과 관심 이벤트 집합을 도출하는 것,
 
-* 또한 시스템 이벤트를 단계-2 에서 상태와 무관하게 주입해주는 것도 Crash(#) 와 Code Coverage 개선에 큰 역할.
+  그리고 시스템 이벤트를 단계-2 에서 상태와 무관하게 주입해주는 것이 특징 중 하나
 
 * SOTA 였던 [Facebook Sapienz](../resources/p_issta16_sapienz.pdf) 을 Crash Uniqueness 와 Code Coverage 기준으로 추월했다는 점에서 눈여겨 볼 만함
 
-  * 이들 GUI 테스트 자동화 영역은 Unique Crash (#), Coverage 기준을 가지고 대결 中
+  * 이들 GUI 테스트 자동화 영역은 Unique Crash (#), Code Coverage 기준을 가지고 대결 中
+
+  * Sapienz 이전에는 학계에서 조차도 Monkey Test 가 최고라고 여겨졌었음
 
 * 강화 학습의 구조와 매우 유사한 구조와 알고리즘을 가지고 있음. *Stoat 것을 벤치마킹해서 강화학습으로 변경해서 개선한다면?*
 
