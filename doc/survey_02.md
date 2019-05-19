@@ -16,7 +16,7 @@
 
 ## KeyWord
 
-* Sampling Based M/L, Stochastic Behavior Model, GUI Testing
+Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 ## Summary
 
