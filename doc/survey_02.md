@@ -1,40 +1,40 @@
 # Guided, Stochastic Model-Based GUI Testing of Android Apps
 
-* ESEC/FSE 2017 Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering
+① ESEC/FSE 2017 Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering
 
-* [fse17-stoat-full-paper.pdf](../resources/fse17-stoat-full-paper.pdf)
+   * [fse17-stoat-full-paper.pdf](../resources/fse17-stoat-full-paper.pdf)
 
-* https://github.com/tingsu/Stoat
+   * https://github.com/tingsu/Stoat
 
-* https://www.youtube.com/watch?v=Y1bTgqRwtbQ
+② https://www.youtube.com/watch?v=Y1bTgqRwtbQ
 
   ![image_9](../resources/img/image_9.png)
 
   ![image_10](../resources/img/image_10.png)
 
-* https://sites.google.com/site/stoat2017/demo
+   * https://sites.google.com/site/stoat2017/demo
 
 ## KeyWord
 
-* Stochastic Behavior Model, GUI Testing
+* Sampling Based M/L, Stochastic Behavior Model, GUI Testing
 
 ## Summary
 
-* 어플리케이션 상태 변화를 가중치 그래프 구조의 행위 모델로 표현, node 는 UI Widget 의 상태로 edge 는 방문 빈도로 정의
+① 어플리케이션 상태 변화를 가중치 그래프 구조의 행위 모델로 표현, node 는 UI Widget 의 상태로 edge 는 방문 빈도로 정의
 
-* 도구 수행은 1) 초기 모델 구축 단계와 2) 모델 뮤테이션 단계로 구성되고 단계-2 에서 Test Sequence 생성 및 수행
+② 도구 수행은 1) 초기 모델 구축 단계와 2) 모델 뮤테이션 단계로 구성되고 단계-2 에서 Test Sequence 생성 및 수행
 
-* 단계-1 에서는 정적 분석을 통해 어플리케이션 별로 의미있는 사용자 이벤트 집합과 관심 이벤트 집합을 도출하는 것,
+ 단계-1 에서는 정적 분석을 통해 어플리케이션 별로 의미있는 사용자 이벤트 집합과 관심 이벤트 집합을 도출하는 것,
 
   그리고 단계-1 의 정적 분석을 통해 추출한 시스템 이벤트를 임의로 주입해주는 것이 특징 중 하나
 
-* SOTA 였던 [Facebook Sapienz](../resources/p_issta16_sapienz.pdf) 을 Crash Uniqueness 와 Code Coverage 기준으로 추월
+③ SOTA 였던 [Facebook Sapienz](../resources/p_issta16_sapienz.pdf) 을 Crash Uniqueness 와 Code Coverage 기준으로 추월
 
   * 이들 GUI 테스트 자동화 영역은 Unique Crash (#), Code Coverage 기준을 가지고 대결 中
 
   * Sapienz 이전에는 학계에서 조차도 Monkey Test 가 최고라고 여겨졌었음
 
-* 강화 학습의 구조와 매우 유사한 구조와 알고리즘을 가지고 있음. *Stoat 것을 벤치마킹해서 강화학습으로 변경해서 개선한다면?*
+④ 강화 학습의 구조와 매우 유사한 구조와 알고리즘을 가지고 있음. *Stoat 것을 벤치마킹해서 강화학습으로 변경해서 개선한다면?*
 
   * learning : model construction phase
 
@@ -44,10 +44,10 @@
 
 ## Limitation
 
-* 실행 불가능한 이벤트 시퀀스를 생성하기도 하는데, turn-around 로 UI object index 를 가지고
+① 실행 불가능한 이벤트 시퀀스를 생성하기도 하는데, turn-around 로 UI object index 를 가지고
    이벤트 주입 대상 UI object 를 찾아감 (왜 한계점이라고 했는가?)
 
-* 모든 가능한 상태를 찾아가지는 못함 (이것도 당연한 한계점이 아닌가? 왜 이렇게 말하는가?)
+② 모든 가능한 상태를 찾아가지는 못함 (이것도 당연한 한계점이 아닌가? 왜 이렇게 말하는가?)
 
 ## Overall Approach
 
@@ -55,24 +55,24 @@
 
 ![image_14](../resources/img/image_14.png)
 
-**목적** : 초기 행위 모델 (모델 = @ 2nd phase , test sequence 생성을 가이드하는데 사용) 구축
+**① 목적** : 초기 행위 모델 (모델 = @ 2nd phase , test sequence 생성을 가이드하는데 사용) 구축
 
-1. Static Analysis : 소스 코드의 이벤트 리스너를 보고 특정 상태에서 입력 가능 이벤트 (시스템 이벤트 포함) 집합 추출
-2. Dynamic Analysis
+* Static Analysis : 소스 코드의 이벤트 리스너를 보고 특정 상태에서 입력 가능 이벤트 (시스템 이벤트 포함) 집합 추출
+* Dynamic Analysis
    * UI 의 계층 구조를 보고 입력할 이벤트 추론
    * 코드 커버리지 최대화를 위한 이벤트 수행의 우선순위 책정
-3. Exploration : FSM 구축하는 동안 이벤트 수행 빈도를 저장, 초기 모델 확정(transition probability)에 사용됨
+* Exploration : FSM 구축하는 동안 이벤트 수행 빈도를 저장, 초기 모델 확정(transition probability)에 사용됨
 
 #### Phase - 2 Model Mutation : Test Sequence 생성 및 수행
 
 ![image_15](../resources/img/image_15.png)
 
-**목적** : Code Coverage 와 Event Sequence Diversity 의 최대화
+**① 목적** : Code Coverage 와 Event Sequence Diversity 의 최대화
 
-1. "Exploration" 성향 높이기 위해 transition probability 의 mutation
-2. mutation 모델을 활용해 test sequence 생성 + system event(phase-1 추출) 랜덤 주입
-3. event sequence 수행 및 code coverage / seq diversity 계산
-4. gibbs sampling 통해 수행 결과를 보고 mutated model 을 새로운 model 로 정의할 것인지 결정
+* "Exploration" 성향 높이기 위해 transition probability 의 mutation
+* mutation 모델을 활용해 test sequence 생성 + system event(phase-1 추출) 랜덤 주입
+* event sequence 수행 및 code coverage / seq diversity 계산
+* gibbs sampling 통해 수행 결과를 보고 mutated model 을 새로운 model 로 정의할 것인지 결정
 
 
 ## Stochastic Finite State Model
@@ -82,7 +82,7 @@
 
 #### 단위 상태의 정의
 
-**목적** : State Explosion 문제와 Diversity 문제의 적정선을 찾고자 하는 것임
+**① 목적** : State Explosion 문제와 Diversity 문제의 적정선을 찾고자 하는 것임
 
 * 단위 상태 표현
 
@@ -111,7 +111,7 @@
 
 #### Static Event Identification
 
-**목적** : 안드로이드 F/W 이 제공하는 static UI information 에는 동적 이벤트 정보가 누락되어 이를 보완하고자 함
+**① 목적** : 안드로이드 F/W 이 제공하는 static UI information 에는 동적 이벤트 정보가 누락되어 이를 보완하고자 함
 
 * android.app.Activity 별로 menu action 은 menu key 눌려져야 호출 가능함. 즉, 이벤트 핸들러가 구현된 앱에 대해서만 해당 이벤트를 발생하면 됨
 
@@ -125,7 +125,7 @@
   무조건 있다고 가정하고 이벤트를 주입시키는 것은 효율성을 떨어 트릴테니 당연한 것과 그렇지 않는 것을 구분하고
   그렇지 않은 것은 static 코드 분석을 통해 선별한다는 것으로 이해됨
 
-**방법** : 이벤트 리스너와 특정 overriding 된 method 들에서 이벤트 추출, 동적 탐색 時 이벤트 주입시 얻어오는 UI 의 resource id 에 연관시킴
+**② 방법** : 이벤트 리스너와 특정 overriding 된 method 들에서 이벤트 추출, 동적 탐색 時 이벤트 주입시 얻어오는 UI 의 resource id 에 연관시킴
 
 **QUESTION** : state 와 무관하게 연관 정보를 별도 관리한다는 의미인지? 구체 사항이 궁금함
 
@@ -159,27 +159,27 @@ QUESTION : unvisited 는 ui widget 의 식별자 (e.g., object id) 로 판단하
 
 #### Gibbs Sampling
 
-**정의** : 깁스 샘플링은 Markov Chain Monte Carlro 의 일종으로 두 개 이상의 확률변수의 결합확률분포로부터 일련의 표본을 생성하는 확률적 알고리즘
+**① 정의** : 깁스 샘플링은 Markov Chain Monte Carlro 의 일종으로 두 개 이상의 확률변수의 결합확률분포로부터 일련의 표본을 생성하는 확률적 알고리즘
 
 * Monte Carlo :  랜덤 표본을 뽑아 함수의 근사해를 확률적으로 계산하는 알고리즘
 * Markov Chain : 코프 연쇄(Markov Chain)란 마코프 가정(Markov assumption)을 따르는 이산 시간 확률 과정으로
                  한 상태에서 다른 상태로의 전이(transition)는 그동안 상태 전이에 대한 긴 이력(history)을 필요로 하지 않고 바로 직전 상태에서의 전이로 추정
 * MCMC : Markov Chain Based Monte Carlo
 
-**응용** : Stoat 관점에서는 특정 App State 상태에서 입력 가능한 event 들의 transition probability 들을 의미하고
+**② 응용** : Stoat 관점에서는 특정 App State 상태에서 입력 가능한 event 들의 transition probability 들을 의미하고
        특정 상태에서 복수의 transition 으로 동시에 갈 수 없기 때문에 Gibbs Sampling 적용이 적합함
 
 
-**특징** : 깁스 샘플링은 다음번 생성될 표본은 현재 샘플에 영향을 받는다는 점에서는 MCMC 와 같지만,
+**③ 특징** : 깁스 샘플링은 다음번 생성될 표본은 현재 샘플에 영향을 받는다는 점에서는 MCMC 와 같지만,
        나머지 변수는 그대로 두고 한 변수에만 변화를 준다는 점이 다릅니다.
 
-**확률 밀도 함수化** : 목적 함수(cost function)을 확률 밀도 함수로 변환하는 일반적 방법 ,refs to 3.2 @ [Stochastic Superoptimization.pdf](../resources/Stochastic%20Superoptimization.pdf)
+**④ 확률 밀도 함수化** : 목적 함수(cost function)을 확률 밀도 함수로 변환하는 일반적 방법 ,refs to 3.2 @ [Stochastic Superoptimization.pdf](../resources/Stochastic%20Superoptimization.pdf)
 
 ![image_26](../resources/img/image_26.png)
 
 ![image_27](../resources/img/image_27.png)
 
-알고리즘 상세
+**⑤ 알고리즘 상세**
 
 ![image_24](../resources/img/image_24.png)
 
