@@ -131,9 +131,9 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 #### UI Exploration Strategy
 
-**목적** : 대상 앱의 행위를 최대한 완전(completeness)하게 빠짐없이 표현해내기 위함
+**① 목적** : 대상 앱의 행위를 최대한 완전(completeness)하게 빠짐없이 표현해내기 위함
 
-**방법** : 4 가지 탐색 전략을 경험적으로 도출
+**② 방법** : 4 가지 탐색 전략을 경험적으로 도출
 
 | 전략                 | 설명 |
 |:---------------------|:-----|
@@ -145,7 +145,7 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 ![image_20](../resources/img/image_20.png)
 
-QUESTION : unvisited 는 ui widget 의 식별자 (e.g., object id) 로 판단하는가? 상태의 다름으로 판단하는가?
+**③ Question** : unvisited 는 ui widget 의 식별자 (e.g., object id) 로 판단하는가? 상태의 다름으로 판단하는가?
 
 
 #### Algorithm Summary
@@ -155,6 +155,20 @@ QUESTION : unvisited 는 ui widget 의 식별자 (e.g., object id) 로 판단하
 
 ## Details on the "Model Mutation" phase
 
+#### Objective Function (or Cost Function)
+
+**① 정의** : 임의의 TestSuite , T 에 대한 Code Coverage, Model Coverage, Test Diversity 값의 합
+
+해당 함수값을 최대로 하는 Test Suite 를 찾는 것이 Stoat 의 목적임
+
+![image_28](../resources/img/image_28.png)
+
+![image_29](../resources/img/image_29.png)
+
+**② Code & Model Coverage **
+
+* Code Coverage : Statement Coverage (if source code is open), Method Coverage(otherwise)
+* Model Coverage : Edge Coverage , "얼마나 많은 event 가 커버되었는가?"에 대한 표현
 
 
 #### Gibbs Sampling
