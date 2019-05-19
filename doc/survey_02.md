@@ -165,10 +165,23 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 ![image_29](../resources/img/image_29.png)
 
-**② Code & Model Coverage **
+**② Code & Model Coverage**
 
 * Code Coverage : Statement Coverage (if source code is open), Method Coverage(otherwise)
 * Model Coverage : Edge Coverage , "얼마나 많은 event 가 커버되었는가?"에 대한 표현
+
+**③ Test Diversity**
+
+* Test Case 특징 공간에서의 Test Case 를 구성하는 event sequence 들의 centroid 에서 각 event sequence 까지의 평균 euclidean distance
+  * centroid 는 특징 들의 평균, 그러므로 평균에서 멀어져야 variation 이 많은 것
+  * 따라서
+
+    |  Higher Diversity  |  Lower Diversity  |
+    |:---|:---|
+    | ![image_30](../resources/img/image_30.png)   |  ![image_31](../resources/img/image_31.png)  |
+
+
+
 
 
 #### Gibbs Sampling
