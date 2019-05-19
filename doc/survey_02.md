@@ -44,10 +44,10 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 ## Limitation
 
-① 실행 불가능한 이벤트 시퀀스를 생성하기도 하는데, turn-around 로 UI object index 를 가지고
-   이벤트 주입 대상 UI object 를 찾아감 (왜 한계점이라고 했는가?)
+① 실행 불가능한 이벤트 시퀀스를 생성하기도 하는데, 제안된 방법만으로 이를 해결할 수 없어 turn-around 로 UI object index 를 가지고
+   이벤트 주입 대상 UI object 를 찾아감
 
-② 모든 가능한 상태를 찾아가지는 못함 (이것도 당연한 한계점이 아닌가? 왜 이렇게 말하는가?)
+② 당연한 것이겠지만 모든 가능한 상태를 탐색하도록 할 수 없음
 
 ## Overall Approach
 
@@ -107,7 +107,7 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 최초 전이 확률은 Model Construction 단계에서의 "대상 이벤트 실행 횟수 / 전체 이벤트 실행 횟수" 정의됨
 
-## Model Construction
+## Details on "Model Construction" phase
 
 #### Static Event Identification
 
@@ -153,7 +153,7 @@ QUESTION : unvisited 는 ui widget 의 식별자 (e.g., object id) 로 판단하
 ![image_23](../resources/img/image_23.png)
 
 
-## Model Mutation
+## Details on the "Model Mutation" phase
 
 
 
