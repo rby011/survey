@@ -55,7 +55,7 @@
 
 ![image_14](../resources/img/image_14.png)
 
-목적 : 초기 행위 모델 (모델 = @ 2nd phase , test sequence 생성을 가이드하는데 사용) 구축
+**목적** : 초기 행위 모델 (모델 = @ 2nd phase , test sequence 생성을 가이드하는데 사용) 구축
 
 1. Static Analysis : 소스 코드의 이벤트 리스너를 보고 특정 상태에서 입력 가능 이벤트 (시스템 이벤트 포함) 집합 추출
 2. Dynamic Analysis
@@ -67,7 +67,7 @@
 
 ![image_15](../resources/img/image_15.png)
 
-목적 : Code Coverage 와 Event Sequence Diversity 의 최대화
+**목적** : Code Coverage 와 Event Sequence Diversity 의 최대화
 
 1. "Exploration" 성향 높이기 위해 transition probability 의 mutation
 2. mutation 모델을 활용해 test sequence 생성 + system event(phase-1 추출) 랜덤 주입
@@ -82,7 +82,7 @@
 
 #### 단위 상태의 정의
 
-목적 : State Explosion 문제와 Diversity 문제의 적정선을 찾고자 하는 것임
+**목적** : State Explosion 문제와 Diversity 문제의 적정선을 찾고자 하는 것임
 
 * 단위 상태 표현
 
@@ -111,7 +111,7 @@
 
 #### Static Event Identification
 
-목적 : 안드로이드 F/W 이 제공하는 static UI information 에는 동적 이벤트 정보가 누락되어 이를 보완하고자 함
+**목적** : 안드로이드 F/W 이 제공하는 static UI information 에는 동적 이벤트 정보가 누락되어 이를 보완하고자 함
 
 * android.app.Activity 별로 menu action 은 menu key 눌려져야 호출 가능함. 즉, 이벤트 핸들러가 구현된 앱에 대해서만 해당 이벤트를 발생하면 됨
 
@@ -125,15 +125,15 @@
   무조건 있다고 가정하고 이벤트를 주입시키는 것은 효율성을 떨어 트릴테니 당연한 것과 그렇지 않는 것을 구분하고
   그렇지 않은 것은 static 코드 분석을 통해 선별한다는 것으로 이해됨
 
-방법 : 이벤트 리스너와 특정 overriding 된 method 들에서 이벤트 추출, 동적 탐색 時 이벤트 주입시 얻어오는 UI 의 resource id 에 연관시킴
+**방법** : 이벤트 리스너와 특정 overriding 된 method 들에서 이벤트 추출, 동적 탐색 時 이벤트 주입시 얻어오는 UI 의 resource id 에 연관시킴
 
-QUESTION : state 와 무관하게 연관 정보를 별도 관리한다는 의미인지? 구체 사항이 궁금함
+**QUESTION** : state 와 무관하게 연관 정보를 별도 관리한다는 의미인지? 구체 사항이 궁금함
 
 #### UI Exploration Strategy
 
-목적 : 대상 앱의 행위를 최대한 완전(completeness)하게 빠짐없이 표현해내기 위함
+**목적** : 대상 앱의 행위를 최대한 완전(completeness)하게 빠짐없이 표현해내기 위함
 
-방법 : 4 가지 탐색 전략을 경험적으로 도출
+**방법** : 4 가지 탐색 전략을 경험적으로 도출
 
 | 전략                 | 설명 |
 |:---------------------|:-----|
@@ -159,21 +159,21 @@ QUESTION : unvisited 는 ui widget 의 식별자 (e.g., object id) 로 판단하
 
 #### Gibbs Sampling
 
-정의 : 깁스 샘플링은 Markov Chain Monte Carlro 의 일종으로 두 개 이상의 확률변수의 결합확률분포로부터 일련의 표본을 생성하는 확률적 알고리즘
+**정의** : 깁스 샘플링은 Markov Chain Monte Carlro 의 일종으로 두 개 이상의 확률변수의 결합확률분포로부터 일련의 표본을 생성하는 확률적 알고리즘
 
 * Monte Carlo :  랜덤 표본을 뽑아 함수의 근사해를 확률적으로 계산하는 알고리즘
 * Markov Chain : 코프 연쇄(Markov Chain)란 마코프 가정(Markov assumption)을 따르는 이산 시간 확률 과정으로
                  한 상태에서 다른 상태로의 전이(transition)는 그동안 상태 전이에 대한 긴 이력(history)을 필요로 하지 않고 바로 직전 상태에서의 전이로 추정
 * MCMC : Markov Chain Based Monte Carlo
 
-응용 : Stoat 관점에서는 특정 App State 상태에서 입력 가능한 event 들의 transition probability 들을 의미하고
+**응용** : Stoat 관점에서는 특정 App State 상태에서 입력 가능한 event 들의 transition probability 들을 의미하고
        특정 상태에서 복수의 transition 으로 동시에 갈 수 없기 때문에 Gibbs Sampling 적용이 적합함
 
 
-특징 : 깁스 샘플링은 다음번 생성될 표본은 현재 샘플에 영향을 받는다는 점에서는 MCMC 와 같지만,
+**특징** : 깁스 샘플링은 다음번 생성될 표본은 현재 샘플에 영향을 받는다는 점에서는 MCMC 와 같지만,
        나머지 변수는 그대로 두고 한 변수에만 변화를 준다는 점이 다릅니다.
 
-확률 밀도 함수化 : 목적 함수(cost function)을 확률 밀도 함수로 변환하는 일반적 방법 ,refs to 3.2 @ [Stochastic Superoptimization.pdf](../resources/Stochastic%20Superoptimization.pdf)
+**확률 밀도 함수化** : 목적 함수(cost function)을 확률 밀도 함수로 변환하는 일반적 방법 ,refs to 3.2 @ [Stochastic Superoptimization.pdf](../resources/Stochastic%20Superoptimization.pdf)
 
 ![image_26](../resources/img/image_26.png)
 
