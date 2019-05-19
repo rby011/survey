@@ -176,11 +176,11 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
   * centroid 는 특징 들의 평균, 그러므로 평균에서 멀어져야 variation 이 많은 것
 
+     ![image_33](../resources/img/image_33.png)
+
      |  Higher Diversity  |  Lower Diversity  |
      |:---|:---|
      | ![image_30](../resources/img/image_30.png)   |  ![image_31](../resources/img/image_31.png)  |
-
-     ![image_33](../resources/img/image_33.png)
 
 * 이벤트와 이벤트 시퀀스의 벡터 공간 표현
 
