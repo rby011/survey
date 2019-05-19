@@ -127,7 +127,7 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 **② 방법** : 이벤트 리스너와 특정 overriding 된 method 들에서 이벤트 추출, 동적 탐색 時 이벤트 주입시 얻어오는 UI 의 resource id 에 연관시킴
 
-**QUESTION** : state 와 무관하게 연관 정보를 별도 관리한다는 의미인지? 구체 사항이 궁금함
+**③ Question** : state 와 무관하게 연관 정보를 별도 관리한다는 의미인지? 구체 사항이 궁금함
 
 #### UI Exploration Strategy
 
