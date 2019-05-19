@@ -161,19 +161,31 @@ QUESTION : unvisited 는 ui widget 의 식별자 (e.g., object id) 로 판단하
 
 정의 : 깁스 샘플링은 Markov Chain Monte Carlro 의 일종으로 두 개 이상의 확률변수의 결합확률분포로부터 일련의 표본을 생성하는 확률적 알고리즘
 
-* Monte Carlo :  랜덤 표본을 뽑아 함수의 값을 확률적으로 계산하는 알고리즘
+* Monte Carlo :  랜덤 표본을 뽑아 함수의 근사해를 확률적으로 계산하는 알고리즘
 * Markov Chain : 코프 연쇄(Markov Chain)란 마코프 가정(Markov assumption)을 따르는 이산 시간 확률 과정으로
                  한 상태에서 다른 상태로의 전이(transition)는 그동안 상태 전이에 대한 긴 이력(history)을 필요로 하지 않고 바로 직전 상태에서의 전이로 추정
 * MCMC : Markov Chain Based Monte Carlo
 
+응용 : Stoat 관점에서는 특정 App State 상태에서 입력 가능한 event 들의 transition probability 들을 의미하고
+       특정 상태에서 복수의 transition 으로 동시에 갈 수 없기 때문에 Gibbs Sampling 적용이 적합함
+
+
 특징 : 깁스 샘플링은 다음번 생성될 표본은 현재 샘플에 영향을 받는다는 점에서는 MCMC 와 같지만,
        나머지 변수는 그대로 두고 한 변수에만 변화를 준다는 점이 다릅니다.
 
-응용 : Stoat 관점에서는 특정 App State 상태에서 입력 가능한 event 들의 transition probability 들을 의미하고
-       특정 상태에서 복수의 transition 으로 동시에 갈 수 없기 때문에 Gibbs Sampling 적용이 적합함
+확률 밀도 함수化 : 목적 함수(cost function)을 확률 밀도 함수로 변환하는 일반적 방법 ,refs to 3.2 @ [Stochastic Superoptimization.pdf](../resources/Stochastic%20Superoptimization.pdf)
+
+![image_26](../resources/img/image_26.png)
+
+![image_27](../resources/img/image_27.png)
 
 알고리즘 상세
 
 ![image_24](../resources/img/image_24.png)
 
 ![image_25](../resources/img/image_25.png)
+
+
+#### 확률 기본 개념
+
+http://wolfpack.hnu.ac.kr/2015_Fall/IS/%ED%86%B5%EA%B3%84%ED%95%99%EC%9B%90%EB%A1%A0_4%EC%9E%A5.pdf
