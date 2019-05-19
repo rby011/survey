@@ -150,8 +150,7 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 #### Algorithm Summary
 
-![image_23](../resources/img/image_23.png)
-
+![image_37](../resources/img/image_37.png)
 
 ## Details on the "Model Mutation" phase
 
