@@ -173,16 +173,22 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 **③ Test Diversity**
 
 * Test Case 특징 공간에서의 Test Case 를 구성하는 event sequence 들의 centroid 에서 각 event sequence 까지의 평균 euclidean distance
+
   * centroid 는 특징 들의 평균, 그러므로 평균에서 멀어져야 variation 이 많은 것
-  * 따라서
 
-    |  Higher Diversity  |  Lower Diversity  |
-    |:---|:---|
-    | ![image_30](../resources/img/image_30.png)   |  ![image_31](../resources/img/image_31.png)  |
+     |  Higher Diversity  |  Lower Diversity  |
+     |:---|:---|
+     | ![image_30](../resources/img/image_30.png)   |  ![image_31](../resources/img/image_31.png)  |
 
+     ![image_33](../resources/img/image_33.png)
 
+* 이벤트와 이벤트 시퀀스의 벡터 공간 표현
 
+  ![image_32](../resources/img/image_32.png)
 
+* 결론적으로 Test Diversity 는 아래와 같이 정의한다
+
+   ![image_34](../resources/img/image_34.png)
 
 #### Gibbs Sampling
 
@@ -206,11 +212,16 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 ![image_27](../resources/img/image_27.png)
 
-**⑤ 알고리즘 상세**
+**⑤ 샘플링 알고리즘 상세**
 
 ![image_24](../resources/img/image_24.png)
 
 ![image_25](../resources/img/image_25.png)
+
+
+#### Algorithm Summary
+
+![image_35](../resources/img/image_35.png)
 
 
 #### 확률 기본 개념
