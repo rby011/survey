@@ -51,7 +51,7 @@
 
 ## Overall Approach
 
-#### Phase - 1 Model Construction : FSM 형태로 앱 state 와 behavior 를 표현
+#### [Phase - 1 Model Construction : FSM 형태로 앱 state 와 behavior 를 표현]
 
 ![image_14](../resources/img/image_14.png)
 
@@ -63,7 +63,7 @@
    * 코드 커버리지 최대화를 위한 이벤트 수행의 우선순위 책정
 * Exploration : FSM 구축하는 동안 이벤트 수행 빈도를 저장, 초기 모델 확정(transition probability)에 사용됨
 
-#### Phase - 2 Model Mutation : Test Sequence 생성 및 수행
+#### [Phase - 2 Model Mutation : Test Sequence 생성 및 수행]
 
 ![image_15](../resources/img/image_15.png)
 
