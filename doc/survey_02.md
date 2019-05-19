@@ -221,8 +221,9 @@ Sampling Based M/L, Gibbs Sampling, GUI Test Automation, Android App
 
 #### Algorithm Summary
 
-![image_35](../resources/img/image_35.png)
+[Note] 마지막 Accept Ratio 기준 또한 Random 으로 설정했다. 음..이렇게 빙글 빙글 돌아서 왔는데, 결국 Random 이라니..
 
+![image_36](../resources/img/image_36.png)
 
 #### 확률 기본 개념
 
