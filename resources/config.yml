@@ -1,0 +1,3 @@
+input: Server.jar
+output: output.jar
+transformers:
